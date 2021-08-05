@@ -2,6 +2,7 @@ package me.miguins.service
 
 import me.miguins.model.Character
 import me.miguins.model.NewCharacterRequest
+import me.miguins.model.UpdateCharacterRequest
 import java.util.*
 
 interface CharacterService {
@@ -11,4 +12,6 @@ interface CharacterService {
     fun findById(id: Long): Optional<Character>
 
     fun listAll(): List<Character>
+
+    fun update(character: Character): Character
 }

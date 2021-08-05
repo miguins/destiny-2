@@ -2,6 +2,7 @@ package me.miguins.service
 
 import me.miguins.model.Character
 import me.miguins.model.NewCharacterRequest
+import me.miguins.model.UpdateCharacterRequest
 import me.miguins.repository.CharacterRepository
 import java.util.*
 import javax.inject.Singleton
@@ -20,5 +21,9 @@ class CharacterServiceImpl(
 
     override fun listAll(): List<Character> {
         return characterRepository.findAll()
+    }
+
+    override fun update(character: Character): Character {
+        return characterRepository.update(character)
     }
 }

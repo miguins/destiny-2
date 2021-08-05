@@ -5,6 +5,7 @@ import io.micronaut.http.annotation.*
 import io.micronaut.validation.Validated
 import me.miguins.model.CharacterResponse
 import me.miguins.model.NewCharacterRequest
+import me.miguins.model.UpdateCharacterRequest
 import me.miguins.service.CharacterService
 import javax.validation.Valid
 
@@ -42,5 +43,18 @@ class CharacterController(private val characterService: CharacterService) {
         }
 
         return HttpResponse.ok(characters)
+    }
+
+    @Put("/{id}")
+    fun update(@PathVariable id: Long, @Body @Valid request: UpdateCharacterRequest): HttpResponse<Any> {
+        val possibleCharacter = characterService.findById(id)
+
+        if (possibleCharacter.isEmpty) {
+            return HttpResponse.notFound()
+        }
+
+        val updatedCharacter = characterService.update(request.toCharacter(possibleCharacter.get()))
+
+        return HttpResponse.ok(CharacterResponse(updatedCharacter))
     }
 }

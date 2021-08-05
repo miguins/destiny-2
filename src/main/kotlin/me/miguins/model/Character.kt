@@ -10,17 +10,17 @@ class Character(
 
         @field:NotNull
         @Enumerated(EnumType.STRING)
-        val type: CharacterType,
+        var type: CharacterType,
 
         @Enumerated(EnumType.STRING)
         @field:NotNull
-        val race: CharacterRace,
+        var race: CharacterRace,
 
         @field:NotBlank
-        val gender: String,
+        var gender: String,
 
         @field:NotBlank
-        val name: String
+        var name: String
 ) {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

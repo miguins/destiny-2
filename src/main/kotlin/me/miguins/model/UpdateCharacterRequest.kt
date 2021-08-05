@@ -1,10 +1,11 @@
 package me.miguins.model
 
-import com.sun.istack.NotNull
+
 import io.micronaut.core.annotation.Introspected
 import javax.persistence.EnumType
 import javax.persistence.Enumerated
 import javax.validation.constraints.NotBlank
+import javax.validation.constraints.NotNull
 
 @Introspected
 data class UpdateCharacterRequest(

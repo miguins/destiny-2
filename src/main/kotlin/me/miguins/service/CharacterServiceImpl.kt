@@ -2,7 +2,6 @@ package me.miguins.service
 
 import me.miguins.model.Character
 import me.miguins.model.NewCharacterRequest
-import me.miguins.model.UpdateCharacterRequest
 import me.miguins.repository.CharacterRepository
 import java.util.*
 import javax.inject.Singleton

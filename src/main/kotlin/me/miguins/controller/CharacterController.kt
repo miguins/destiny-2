@@ -33,4 +33,14 @@ class CharacterController(private val characterService: CharacterService) {
 
         return HttpResponse.ok(CharacterResponse(possibleCharacter.get()))
     }
+
+    @Get
+    fun list(): HttpResponse<List<Any>> {
+
+        val characters = characterService.listAll().map {
+            CharacterResponse(it)
+        }
+
+        return HttpResponse.ok(characters)
+    }
 }

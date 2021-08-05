@@ -9,4 +9,6 @@ interface CharacterService {
     fun create(character: NewCharacterRequest): Character
 
     fun findById(id: Long): Optional<Character>
+
+    fun listAll(): List<Character>
 }

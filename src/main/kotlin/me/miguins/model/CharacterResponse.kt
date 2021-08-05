@@ -2,6 +2,8 @@ package me.miguins.model
 
 class CharacterResponse(character: Character) {
 
+    val id = character.id
+
     val type = character.type
 
     val race = character.race

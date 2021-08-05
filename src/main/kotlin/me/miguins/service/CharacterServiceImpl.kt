@@ -17,4 +17,8 @@ class CharacterServiceImpl(
     override fun findById(id: Long): Optional<Character> {
         return characterRepository.findById(id)
     }
+
+    override fun listAll(): List<Character> {
+        return characterRepository.findAll()
+    }
 }

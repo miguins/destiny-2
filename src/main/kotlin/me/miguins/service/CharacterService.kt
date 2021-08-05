@@ -14,4 +14,6 @@ interface CharacterService {
     fun listAll(): List<Character>
 
     fun update(character: Character): Character
+
+    fun delete(id: Long)
 }

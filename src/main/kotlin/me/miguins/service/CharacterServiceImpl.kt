@@ -26,4 +26,8 @@ class CharacterServiceImpl(
     override fun update(character: Character): Character {
         return characterRepository.update(character)
     }
+
+    override fun delete(id: Long) {
+        characterRepository.deleteById(id)
+    }
 }

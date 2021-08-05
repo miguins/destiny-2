@@ -57,4 +57,17 @@ class CharacterController(private val characterService: CharacterService) {
 
         return HttpResponse.ok(CharacterResponse(updatedCharacter))
     }
+
+    @Delete("{id}")
+    fun delete(@PathVariable id: Long): HttpResponse<Any> {
+        val possibleCharacter = characterService.findById(id)
+
+        if (possibleCharacter.isEmpty) {
+            return HttpResponse.notFound()
+        }
+
+        characterService.delete(id)
+
+        return HttpResponse.ok()
+    }
 }

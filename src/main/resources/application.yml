@@ -17,4 +17,4 @@ endpoints:
 
 jackson:
   serialization:
-    writeDateAsTimestamps: false
+    writeDatesAsTimestamps: false

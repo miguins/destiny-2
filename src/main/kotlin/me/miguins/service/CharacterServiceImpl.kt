@@ -1,7 +1,7 @@
 package me.miguins.service
 
 import me.miguins.model.Character
-import me.miguins.model.NewCharacterRequest
+import me.miguins.controller.character.dto.NewCharacterRequest
 import me.miguins.repository.CharacterRepository
 import java.util.*
 import javax.inject.Singleton
@@ -14,19 +14,19 @@ class CharacterServiceImpl(
         return characterRepository.save(character.toCharacter())
     }
 
-    override fun findById(id: Long): Optional<Character> {
+    override fun findById(id: UUID): Character? {
         return characterRepository.findById(id)
     }
 
     override fun listAll(): List<Character> {
-        return characterRepository.findAll()
+        return characterRepository.findAll(Character())
     }
 
     override fun update(character: Character): Character {
         return characterRepository.update(character)
     }
 
-    override fun delete(id: Long) {
+    override fun delete(id: UUID) {
         characterRepository.deleteById(id)
     }
 }

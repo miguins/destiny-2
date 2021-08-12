@@ -1,4 +1,6 @@
-package me.miguins.model
+package me.miguins.controller.character.dto
+
+import me.miguins.model.Character
 
 class CharacterResponse(character: Character) {
 

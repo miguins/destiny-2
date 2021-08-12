@@ -1,0 +1,5 @@
+CREATE KEYSPACE destiny2 WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 3} AND durable_writes = true;
+
+use destiny2;
+
+CREATE TABLE characters (id uuid, createdAt text, type text, race text, gender text, name text, PRIMARY KEY((id)));

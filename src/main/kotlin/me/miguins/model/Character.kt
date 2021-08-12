@@ -1,30 +1,13 @@
 package me.miguins.model
 
 import java.time.LocalDateTime
-import javax.persistence.*
-import javax.validation.constraints.NotBlank
-import javax.validation.constraints.NotNull
+import java.util.*
 
-@Entity
-class Character(
-
-        @field:NotNull
-        @Enumerated(EnumType.STRING)
-        var type: CharacterType,
-
-        @Enumerated(EnumType.STRING)
-        @field:NotNull
-        var race: CharacterRace,
-
-        @field:NotBlank
-        var gender: String,
-
-        @field:NotBlank
-        var name: String
-) {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long? = null
-
-    val createdAt: LocalDateTime = LocalDateTime.now()
-}
+data class Character(
+        val id: UUID? = UUID.randomUUID(),
+        val createdAt: String? = LocalDateTime.now().toString(),
+        var type: CharacterType? = null,
+        var race: CharacterRace? = null,
+        var gender: String? = null,
+        var name: String? = null
+)
